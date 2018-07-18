@@ -8,19 +8,21 @@ function get_header($head='')
  <?= get_base_header($head); ?>
 
  <header>
-   <div class="container">
-     <a class="logo" href="./">
-       BRAND BLOG
-     </a>
-     <input class="form-input"type="search" placeholder="Buscar">
-     <nav>
-       <button type="button" onclick="alert('Se agrego un nuevo Post')">Nuevo Post</button>
-     </nav>
-   </div>
+   <form class="" action="form.php" method="post">
+     <div class="container">
+       <a class="logo" href="./">
+         BRAND BLOG
+       </a>
+       <input class="form-input2"type="search" placeholder="Buscar">
+       <nav>
+         <input class="button" type="submit" name="" value="Nuevo Post">
+
+       </nav>
+     </div>
+   </form>
+
  </header>
- <div class="">
-   <p>Mostrando publicaciones recientes</p>
- </div>
+
 
  <?php
 }
