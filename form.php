@@ -16,7 +16,7 @@ get_header(
       <input type="text"
            name="title"
            class="form-input-title"
-           placeholder="Titulo">
+           placeholder="Titulo"><br />
       <p></p>
       <textarea class="textarea"name="comentarios" rows="20" cols="70" placeholder="Escribe aquí tus comentarios" style="margin-top:2%; width: 100%;"></textarea>
     </div>
