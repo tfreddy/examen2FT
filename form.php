@@ -5,28 +5,31 @@ include_once "app/Classes/FlashMessage.php";
 include_once "app/utils/helpers.php";
 $flashMessage = new FlashMessage();
 
-get_header(
-  '<link rel="stylesheet" href="public/css/style.css">'
-);
+get_header();
 ?>
  <div class="form-1">
-   <form class="form_form" action=""<?= base_url(); ?>app/Controllers/Auth/login.php" method="POST" novalidate>
+   <form  action="app/utils/validations.php" method="post" class="form_form">
     <div class="">
       <p>Agregando Nueva Publicacion</p>
       <input type="text"
            name="title"
            class="form-input-title"
-           placeholder="Titulo"><br />
+           placeholder="Titulo"
+           value="<?= $flashMessage->getInput('title'); ?>"
+           required>
       <p></p>
-      <textarea class="textarea"name="comentarios" rows="20" cols="70" placeholder="Escribe aquí tus comentarios" style="margin-top:2%; width: 100%;"></textarea>
+      <textarea class="textarea"name="contenido"  <?= $flashMessage->getInput('content'); ?> rows="20" cols="70" placeholder="Escribe aquí tus comentarios" style="margin-top:2%; width: 100%;" required></textarea>
     </div>
   <div class="registerbutton">
-     <input class="button" type="submit" name="" value="Guardar" onclick="alert('Se agrego un nuevo Post')">
+     <input class="button" type="submit" name="" value="Guardar" >
 
   </div>
   </form>
+  <div class="vista">
+
+  </div>
   <?php if ($flashMessage->hasErrors() || $flashMessage->hasMessage()): ?>
-        <div class="alert danger">
+        <div class="AlertaDePeligro">
           <?php if ($flashMessage->hasMessage()): ?>
           <p><?= $flashMessage->getMessage() ?></p>
           <?php endif; ?>
@@ -40,3 +43,9 @@ get_header(
           <?php endif; ?>
   </div>
   <?php endif; ?>
+  <?php if ($flashMessage->hasSuccessMessage()): ?>
+<div class="AlertadeExito">
+  <?= $flashMessage->getSuccessMessage() ?>
+</div>
+<?php endif; ?>
+</div>

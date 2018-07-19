@@ -15,6 +15,13 @@ header {
     color: white;
 
     z-index: 2;
+
+}
+.vista{
+  padding-left: 200px;
+  padding-right: 200px;
+  
+
 }
 
 
@@ -37,6 +44,7 @@ header .form-input {
     border-radius: 5px;
     border: 1px solid #ddd;
     width: 250px;
+    height: 30px;
     color: #fe00b4;
 }
 
@@ -86,6 +94,7 @@ header .form-input:focus {
   height: 30px ;
   color: #fe00b4;
 }
+
 textarea{
   border-radius: 5px;
   border: 1px solid #ccc;
